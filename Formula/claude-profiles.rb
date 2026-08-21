@@ -1,20 +1,20 @@
 class ClaudeProfiles < Formula
   desc "Launch claude with only the plugins, skills, and MCP servers a profile defines"
   homepage "https://github.com/fuzzyalej/claude-profile"
-  version "0.5.0"
+  version "0.5.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.0/claude-profiles-aarch64-apple-darwin.tar.xz"
-      sha256 "422a2b3eea51eb44417379ef43d336243baa529d376a15f91b5a04095743228b"
+      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.1/claude-profiles-aarch64-apple-darwin.tar.xz"
+      sha256 "899046a0e8a7f52407b0dbc3483b8f43c2f26dfa059cd8b7f50c2a3b91562f38"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.0/claude-profiles-x86_64-apple-darwin.tar.xz"
-      sha256 "5fc919e6d69a09dc22fab1ec1b44b735655169962de5603fc4700e70c1917abe"
+      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.1/claude-profiles-x86_64-apple-darwin.tar.xz"
+      sha256 "5d75a4cdd706be5a3c624fbddaed448e216b57c30bbefd19cc904d7d5cec1b0e"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.0/claude-profiles-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "fbcb5159aa6934b5b503e679ef60121726b7bd42b526e39bae8b08baba57fc3a"
+    url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.5.1/claude-profiles-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "e7a7be00dafe8556186011bc08057107e67f1fbc485804a6f3c7fb47ef8d80a6"
   end
   license "MIT"
 
@@ -41,9 +41,15 @@ class ClaudeProfiles < Formula
   end
 
   def install
-    bin.install "claude-profile" if OS.mac? && Hardware::CPU.arm?
-    bin.install "claude-profile" if OS.mac? && Hardware::CPU.intel?
-    bin.install "claude-profile" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "claude-profile"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "claude-profile"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "claude-profile"
+    end
 
     install_binary_aliases!
 
