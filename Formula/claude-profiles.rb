@@ -1,20 +1,20 @@
 class ClaudeProfiles < Formula
   desc "Launch claude with only the plugins, skills, and MCP servers a profile defines"
   homepage "https://github.com/fuzzyalej/claude-profile"
-  version "0.7.0"
+  version "0.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.7.0/claude-profiles-aarch64-apple-darwin.tar.xz"
-      sha256 "a43cd04d4da557882abf6b4a25d88449c6c95cbfe564e77f4402eb7b8509dbb9"
+      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.8.1/claude-profiles-aarch64-apple-darwin.tar.xz"
+      sha256 "bc6902b65dc2f75537e0f66dffba9c874b1cbf71e8a7facd402fc82f892c737d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.7.0/claude-profiles-x86_64-apple-darwin.tar.xz"
-      sha256 "a62c3c7f36905464658a8eabef2ac0db86550ddd62d4c55306ac64d19018cfd6"
+      url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.8.1/claude-profiles-x86_64-apple-darwin.tar.xz"
+      sha256 "619ed5e8b2d542a976202489fc71bbfaedf779e6cd62ec530f3afa1b6027aa14"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.7.0/claude-profiles-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "fd4b86e785ead27288de405fb1e33cb8d72aeea56993ca924ed86c57f1a0088f"
+    url "https://github.com/fuzzyalej/claude-profile/releases/download/v0.8.1/claude-profiles-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "054a9e2e6e33d1f4eafc5b7ce220794d20e569454cba3c4b6b1f3712e6d5ba89"
   end
   license "MIT"
 
